@@ -146,23 +146,151 @@
     border-radius: 12px;
     margin-top: 10px;
   }
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  header {
-    height: 60px;
+  
+  /* Floating Action Button (FAB) */
+  .fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 1001;
   }
-  header .title {
-    font-size: clamp(1.2rem, 4vw, 2rem);
+  
+  .fab:hover {
+    transform: scale(1.05);
   }
-  .video-item {
-    flex-direction: column;
-    align-items: flex-start;
+  
+  .fab-icon {
+    font-size: 1.5rem;
   }
-  /* Make video image full width on mobile */
-  .video-item img {
+  
+  /* Donation Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    margin-top: 15px;
-    border-radius: 0; /* Optionally remove rounding for a full-width look */
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
+    z-index: 1002;
   }
-}
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    text-align: center;
+    animation: slideDown 0.3s;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  #donateConfirm {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+  
+  #donateCancel {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    header {
+      height: 60px;
+    }
+    header .title {
+      font-size: clamp(1.2rem, 4vw, 2rem);
+    }
+    .video-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    /* Full-width image for mobile, like YouTube */
+    .video-item img {
+      width: 100%;
+      height: auto;
+      margin-top: 15px;
+      border-radius: 0;
+    }
+  }
+  
+/* Floating Action Button (FAB) */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--header-bg); /* Same gradient as header */
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif; /* Using Cairo font */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 1001;
+  }
+  
+  .fab-text {
+    font-weight: bold; /* Bold text like header */
+    font-family: 'Cairo', sans-serif; /* Using Cairo font */
+  }
+  
