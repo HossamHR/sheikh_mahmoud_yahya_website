@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تطبيق الشيخ محمود يحيي</title>
+  <!-- Google Fonts for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Full-width enhanced header -->
+  <header>
+    <img src="assets/logo.png" alt="شعار التطبيق" class="logo">
+    <div class="title">تطبيق الشيخ محمود يحيي</div>
+    <!-- Right-side placeholder to balance the layout -->
+    <div class="placeholder"></div>
+  </header>
+
+  <main class="container">
+    <!-- Sticky Navigation with ARIA Roles -->
+    <nav aria-label="التنقل بين السور والدروس">
+      <div class="tabs" role="tablist">
+        <button class="tab active" role="tab" aria-selected="true" tabindex="0" id="tab-surahs" data-target="surahs">
+          السور
+        </button>
+        <button class="tab" role="tab" aria-selected="false" tabindex="0" id="tab-videos" data-target="videos">
+          الدروس
+        </button>
+      </div>
+    </nav>
+
+    <!-- Content Panels -->
+    <section id="surahs" class="tab-content" role="tabpanel" aria-labelledby="tab-surahs">
+      <!-- Surahs will be dynamically loaded from JSON -->
+      <div id="surah-list"></div>
+    </section>
+
+    <section id="videos" class="tab-content" role="tabpanel" aria-labelledby="tab-videos" hidden>
+      <!-- Video Cards -->
+      <article class="card" tabindex="0">
+        <div class="video-item">
+          <div>
+            <h2>تفسير سورة الفاتحة</h2>
+            <p>قراءة تفسير سورة الفاتحة</p>
+          </div>
+          <img src="assets/placeholder.png" alt="صورة مصغرة لتفسير سورة الفاتحة">
+        </div>
+      </article>
+      <article class="card" tabindex="0">
+        <div class="video-item">
+          <div>
+            <h2>تلاوة سورة البقرة</h2>
+            <p>قراءة تلاوة سورة البقرة</p>
+          </div>
+          <img src="assets/placeholder.png" alt="صورة مصغرة لتلاوة سورة البقرة">
+        </div>
+      </article>
+      <article class="card" tabindex="0">
+        <div class="video-item">
+          <div>
+            <h2>معاني سورة آل عمران</h2>
+            <p>قراءة معاني سورة آل عمران</p>
+          </div>
+          <img src="assets/placeholder.png" alt="صورة مصغرة لمعاني سورة آل عمران">
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Floating Action Button for Donation -->
+  <button id="donationFab" class="fab">
+    <span class="fab-icon">❤️</span>
+    <span class="fab-text">تبرع لدعم التطبيق</span>
+  </button>
+
+  <!-- Donation Modal -->
+  <div id="donationModal" class="modal">
+    <div class="modal-content">
+      <h2>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h2>
+      <p>جزاك الله خيرًا, كم المبلغ الذي تريد التبرع به؟</p>
+      <input type="number" id="donationAmount" placeholder="المبلغ">
+      <div class="modal-buttons">
+        <button id="donateConfirm" class="modal-btn">تبرع</button>
+        <button id="donateCancel" class="modal-btn">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to external JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
